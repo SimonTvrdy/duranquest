@@ -4,6 +4,12 @@ import com.company.items.Food;
 import com.company.items.Potion;
 import com.company.map.GameLocation;
 
+/**
+ * Třída pro vytváření nepřátel
+ * @author Šimon Tvrdý
+ * @version 0.1a
+ * @since Java 16
+ */
 public class Enemy implements Entity{
     @Override
     public void fight() {

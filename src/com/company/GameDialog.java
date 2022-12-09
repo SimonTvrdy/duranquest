@@ -4,6 +4,12 @@ package com.company;
 import java.util.Locale;
 import java.util.Scanner;
 
+/**
+ * Třída pro výpis textů v různém formátu
+ * @author Šimon Tvrdý
+ * @version 0.1a
+ * @since Java 16
+ */
 public class GameDialog {
 
     public static final String ANSI_RESET = "\u001B[0m";
@@ -26,8 +32,14 @@ public class GameDialog {
 
     private Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Uvítá hráče ve hře
+     * @param gameName název hry
+     * @param version verze hry
+     * @param author autor hry
+     */
     public void intro(String gameName, double version, String author) {
-        System.out.println("Vitejte ve hre");
+        System.out.println("Vítejte ve hře");
         System.out.print(ANSI_WHITE);
         System.out.println("--------------------------------------");
         System.out.print(ANSI_RED);
@@ -35,10 +47,14 @@ public class GameDialog {
         System.out.print(ANSI_WHITE);
         System.out.println("--------------------------------------");
         System.out.print(ANSI_RESET);
-        System.out.println("Vytvoril " + ANSI_CYAN + author);
+        System.out.println("Vytvořil " + ANSI_CYAN + author);
         System.out.print(ANSI_RESET);
     }
 
+    /**
+     * Vypíše text
+     * @param sentence text pro výpis
+     */
     public void say(String sentence) {
         String[] words = sentence.split(" ");
         for (String word : words) {
@@ -53,6 +69,11 @@ public class GameDialog {
         System.out.println();
     }
 
+    /**
+     * Vypíše text barevně
+     * @param sentence věta pro výpis
+     * @param color barva textu
+     */
     public void say(String sentence, String color) {
         switch (color.toLowerCase(Locale.ROOT)) {
             case "black" -> System.out.print(ANSI_BLACK);
@@ -68,6 +89,10 @@ public class GameDialog {
         System.out.print(ANSI_RESET);
     }
 
+    /**
+     * Získává vstup od uživatele
+     * @return vstup od uživatele
+     */
     public String userInput() {
         return scanner.nextLine();
     }
